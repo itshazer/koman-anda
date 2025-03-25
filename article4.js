@@ -1,16 +1,3 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyA7y7AOnhSp7AHaOqiG2LNIJ5iQUUW2UpM",
-  authDomain: "koman-anda.firebaseapp.com",
-  projectId: "koman-anda",
-  storageBucket: "koman-anda.firebasestorage.app",
-  messagingSenderId: "3144889338",
-  appId: "1:3144889338:web:fe453b933117152689ea43",
-  measurementId: "G-3YN10B52Y7"
-};
-
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore(app);
-
 document.addEventListener('DOMContentLoaded', () => {
     let contentText = {};
     let currentLanguage = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('language') || 'en';
@@ -85,24 +72,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function loadComments() {
-        try {
-            const commentsList = document.getElementById('comments-list');
-            commentsList.innerHTML = '';
+    // Firebase initialization (already imported in HTML)
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-            const querySnapshot = await db.collection("comments").get();
-            querySnapshot.forEach(doc => {
-                const comment = doc.data();
-                const commentDiv = document.createElement('div');
-                commentDiv.classList.add('comment');
-                commentDiv.innerHTML = `<strong>${comment.name}</strong>: ${comment.text}`;
-                commentsList.appendChild(commentDiv);
-            });
-        } catch (error) {
-            console.error('Error loading comments:', error);
-        }
+    // Function to load comments from Firestore
+    async function loadComments() {
+        const commentsCollection = collection(db, "comments");
+        const querySnapshot = await getDocs(commentsCollection);
+        const commentsList = document.getElementById('comments-list');
+        commentsList.innerHTML = '';
+
+        querySnapshot.forEach((doc) => {
+            const comment = doc.data();
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('comment');
+            commentDiv.innerHTML = `<strong>${comment.name}</strong>: ${comment.text}`;
+            commentsList.appendChild(commentDiv);
+        });
     }
 
+    // Function to submit a new comment to Firestore
     async function submitComment() {
         const nameInput = document.getElementById('name-input');
         const commentInput = document.getElementById('comment-input');
@@ -111,20 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (commentText) {
             try {
-                await db.collection("comments").add({
+                await addDoc(collection(db, "comments"), {
                     name: name,
                     text: commentText,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    timestamp: new Date()
                 });
-                loadComments();
+                loadComments(); // Reload comments after submission
                 nameInput.value = '';
                 commentInput.value = '';
             } catch (error) {
-                console.error('Error submitting comment:', error);
+                console.error("Error adding document: ", error);
             }
         }
     }
 
+    // Event listener for comment submission
     document.getElementById('submit-comment').addEventListener('click', submitComment);
 
     window.changeLanguage = changeLanguage;
