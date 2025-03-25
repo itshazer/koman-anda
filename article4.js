@@ -1,3 +1,16 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyA7y7AOnhSp7AHaOqiG2LNIJ5iQUUW2UpM",
+  authDomain: "koman-anda.firebaseapp.com",
+  projectId: "koman-anda",
+  storageBucket: "koman-anda.firebasestorage.app",
+  messagingSenderId: "3144889338",
+  appId: "1:3144889338:web:fe453b933117152689ea43",
+  measurementId: "G-3YN10B52Y7"
+};
+
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(app);
+
 document.addEventListener('DOMContentLoaded', () => {
     let contentText = {};
     let currentLanguage = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('language') || 'en';
@@ -74,11 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function loadComments() {
         try {
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
             const commentsList = document.getElementById('comments-list');
             commentsList.innerHTML = '';
 
-            comments.forEach(comment => {
+            const querySnapshot = await db.collection("comments").get();
+            querySnapshot.forEach(doc => {
+                const comment = doc.data();
                 const commentDiv = document.createElement('div');
                 commentDiv.classList.add('comment');
                 commentDiv.innerHTML = `<strong>${comment.name}</strong>: ${comment.text}`;
@@ -89,19 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function submitComment() {
+    async function submitComment() {
         const nameInput = document.getElementById('name-input');
         const commentInput = document.getElementById('comment-input');
         const name = nameInput.value.trim() || 'Anonymous';
         const commentText = commentInput.value.trim();
 
         if (commentText) {
-            let comments = JSON.parse(localStorage.getItem('comments')) || [];
-            comments.push({ name, text: commentText });
-            localStorage.setItem('comments', JSON.stringify(comments));
-            loadComments();
-            nameInput.value = '';
-            commentInput.value = '';
+            try {
+                await db.collection("comments").add({
+                    name: name,
+                    text: commentText,
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                loadComments();
+                nameInput.value = '';
+                commentInput.value = '';
+            } catch (error) {
+                console.error('Error submitting comment:', error);
+            }
         }
     }
 
