@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article Page</title>
-
-    <!-- Import Firebase modules -->
+    <title>Article 4 - Tinarian Leaders Meet for Summit</title>
+    <link rel="stylesheet" href="site.css">
+    <!-- Firebase SDK -->
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
@@ -71,23 +71,39 @@
         // Load comments when the page loads
         window.onload = loadComments;
     </script>
-
 </head>
-<body>
+<body class="article-page">
+    <div class="header">
+        <h1>KA</h1>
+        <div class="nav" id="nav-buttons"></div>
+        <div class="language-selector">
+            <select onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="ns">Natal</option>
+            </select>
+        </div>
+    </div>
 
-<!-- Your article content goes here -->
-<h1 id="article-title"></h1>
-<div id="article-thumbnail"></div>
-<div id="article-summary"></div>
-<div id="article-author"></div>
-<div id="article-content"></div>
-<div id="article-end-summary"></div>
+    <div class="content">
+        <img id="article-thumbnail" class="news-thumbnail" src="" alt="Article Image">
+        <h2 id="article-title"></h2>
+        <p id="article-summary"></p>
+        <p id="article-author" class="article-author"></p>
+        <hr class="content-divider">
+        <div id="article-content"></div>
+        <p id="article-end-summary"></p>
+        
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h3>Comments</h3>
+            <div id="comments-list"></div>
+            <input id="name-input" type="text" placeholder="Your name" />
+            <textarea id="comment-input" placeholder="Add a comment..." rows="4"></textarea>
+            <button id="submit-comment">Submit</button>
+        </div>
+    </div>
 
-<!-- Comments section -->
-<div id="comments-list"></div>
-<input type="text" id="name-input" placeholder="Your name (optional)">
-<textarea id="comment-input" placeholder="Your comment"></textarea>
-<button id="submit-comment">Submit Comment</button>
-
+    <script src="article4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
