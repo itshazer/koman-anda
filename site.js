@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>${article.title}</h3>
                     <p>${article.summary}</p>
                 </div>`
-            ).join('') || 'Content not available') + '</div>';
+            ).join('') || '💤') + '</div>';
             content.style.opacity = '1';
         }, 500);
     }
