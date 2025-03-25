@@ -1,0 +1,32 @@
+{
+    "buttons": {
+        "b1": "Koman",
+        "b2": "Tinarha",
+        "b3": "Natalesha"
+    },
+    "b1": {
+        "articles": [
+            {
+                "title": "Öškurzuk Kora Komano: Bonda Zarra",
+                "summary": "Krelik řenc ze söhnel, čütrezikih öškurzukov kora komano.",
+                "link": "article1.html",
+                "thumbnail": "01.jpg"
+            },
+            {
+                "title": "Esnemeh Gelpe eš Kinilha ešsen Serekkänkizik Kahałšorzuk",
+                "summary": "Kinilha flaššosui kahałšorlu esnemeh däłferev nis serekkänkizik üz vizdisi kahał ferno kunehev.",
+                "link": "article2.html",
+                "thumbnail": "02.jpg"
+            }
+        ]
+    },
+    "b2": {
+        "articles": [
+            {
+                "title": "Tinar Sivkilivev Orucosus pa Kahałkodahra",
+                "summary": "Tinar sivkilivev orucotusus pa ťehovu söhšeli köcörkünel gürüvev, randatos esnemeh dü-išze if dernevik däłferev.",
+                "link": "article3.html"
+            }
+        ]
+    }
+}
