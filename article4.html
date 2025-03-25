@@ -3,41 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article 4 - Tinarian Leaders Meet for Summit</title>
-    <link rel="stylesheet" href="site.css">
+    <title>Article Page</title>
+
+    <!-- Import Firebase modules -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA7y7AOnhSp7AHaOqiG2LNIJ5iQUUW2UpM",
+            authDomain: "koman-anda.firebaseapp.com",
+            projectId: "koman-anda",
+            storageBucket: "koman-anda.firebasestorage.app",
+            messagingSenderId: "3144889338",
+            appId: "1:3144889338:web:fe453b933117152689ea43",
+            measurementId: "G-3YN10B52Y7"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Function to load comments from Firestore
+        async function loadComments() {
+            const commentsCollection = collection(db, "comments");
+            const querySnapshot = await getDocs(commentsCollection);
+            const commentsList = document.getElementById('comments-list');
+            commentsList.innerHTML = '';
+            
+            querySnapshot.forEach((doc) => {
+                const comment = doc.data();
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                commentDiv.innerHTML = `<strong>${comment.name}</strong>: ${comment.text}`;
+                commentsList.appendChild(commentDiv);
+            });
+        }
+
+        // Function to submit a new comment to Firestore
+        async function submitComment() {
+            const nameInput = document.getElementById('name-input');
+            const commentInput = document.getElementById('comment-input');
+            const name = nameInput.value.trim() || 'Anonymous';
+            const commentText = commentInput.value.trim();
+
+            if (commentText) {
+                try {
+                    await addDoc(collection(db, "comments"), {
+                        name: name,
+                        text: commentText,
+                        timestamp: new Date()
+                    });
+                    loadComments(); // Reload comments after submission
+                    nameInput.value = '';
+                    commentInput.value = '';
+                } catch (error) {
+                    console.error("Error adding document: ", error);
+                }
+            }
+        }
+
+        // Event listener for comment submission
+        document.getElementById('submit-comment').addEventListener('click', submitComment);
+
+        // Load comments when the page loads
+        window.onload = loadComments;
+    </script>
+
 </head>
-<body class="article-page">
-    <div class="header">
-        <h1>KA</h1>
-        <div class="nav" id="nav-buttons"></div>
-        <div class="language-selector">
-            <select onchange="changeLanguage(this.value)">
-                <option value="en">English</option>
-                <option value="ns">Natal</option>
-            </select>
-        </div>
-    </div>
+<body>
 
-    <div class="content">
-        <img id="article-thumbnail" class="news-thumbnail" src="" alt="Article Image">
-        <h2 id="article-title"></h2>
-        <p id="article-summary"></p>
-        <p id="article-author" class="article-author"></p>
-        <hr class="content-divider">
-        <div id="article-content"></div>
-        <p id="article-end-summary"></p>
-        
-        <!-- Comments Section -->
-        <div class="comments-section">
-            <h3>Comments</h3>
-            <div id="comments-list"></div>
-            <input id="name-input" type="text" placeholder="Your name" />
-            <textarea id="comment-input" placeholder="Add a comment..." rows="4"></textarea>
-            <button id="submit-comment">Submit</button>
-        </div>
-    </div>
+<!-- Your article content goes here -->
+<h1 id="article-title"></h1>
+<div id="article-thumbnail"></div>
+<div id="article-summary"></div>
+<div id="article-author"></div>
+<div id="article-content"></div>
+<div id="article-end-summary"></div>
 
-    <script src="article4.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- Comments section -->
+<div id="comments-list"></div>
+<input type="text" id="name-input" placeholder="Your name (optional)">
+<textarea id="comment-input" placeholder="Your comment"></textarea>
+<button id="submit-comment">Submit Comment</button>
+
 </body>
 </html>
