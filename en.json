@@ -1,0 +1,69 @@
+{
+    "buttons": {
+        "b1": "World",
+        "b2": "Tinaria",
+        "b3": "Natalicia"
+    },
+    "b1": {
+        "articles": [
+            {
+                "id": "1",
+                "title": "Worldwide Protests: A Closer Look",
+                "summary": "A deep dive into current, active protests around the globe.",
+                "thumbnail": "01.jpg",
+                "link": "article1.html",
+                "author": "By: John Doe",
+                "content": "Protests have erupted worldwide in response to economic instability and political unrest.\n\nCitizens from various nations have taken to the streets, demanding reforms and accountability.",
+                "end_summary": "Protests continue to evolve as citizens push for meaningful changes in governance and policies."
+            },
+            {
+                "id": "2",
+                "title": "Economic Crisis in Kinillia amid Inflation Surge",
+                "summary": "Kinillia faces mounting economic challenges as inflation rates hit record highs.",
+                "thumbnail": "02.jpg",
+                "link": "article2.html",
+                "author": "Jane Smith",
+                "content": "Kinillia’s economy has been hit hard by inflation, resulting in a dramatic rise in the cost of living. Officials are scrambling to stabilize the market.",
+                "end_summary": "The continent faces an uncertain economic future as leaders attempt to stabilize inflation."
+            }
+        ]
+    },
+    "b2": {
+        "articles": [
+            {
+                "id": "3",
+                "title": "Tinarian Leaders Meet for Summit",
+                "summary": "Tinarian leaders have met to discuss pressing regional concerns, including economic cooperation and security challenges.",
+                "thumbnail": "03.jpg",
+                "link": "article3.html",
+                "author": "Alexander K.",
+                "content": "Tinarian leaders gathered this week to address economic cooperation, security concerns, and diplomatic relations in the region.",
+                "end_summary": "The summit concluded with a strong commitment to enhancing regional stability and prosperity."
+            }
+        ]
+    },
+    "b3": {
+        "articles": [
+            {
+                "id": "4",
+                "title": "Buskul Removed from Office",
+                "summary": "Zeralta Metropolitan Municipality (ZZS) Mayor Setir Buskul has been removed from office by the Ministry of Interior, triggering nationwide protests.",
+                "thumbnail": "04.jpg",
+                "link": "article4.html",
+                "author": "Sul Niš",
+                "content": "The Ministry of Interior has removed Zeralta Metropolitan Municipality (ZZS) Mayor Setir Buskul from office following his arrest on corruption charges. Ičindes Mayor Mellen Zeidenei and Garnalcezil Mayor Šäve Iabaka have also been suspended. Additionally, a trustee has been appointed to Garnalcezil Municipality.\n\n\nIn a statement from the Ministry of Interior, it was announced: \n\n\"As a temporary measure, Zeralta Metropolitan Municipality Mayor Setir Buskul has been removed from office by the Ministry of Interior in accordance with Article 108 of the Constitution and Article 35 of the Municipal Law No. 6121.\"\n\nThe ministry’s statement included the following details: \n- **Zeralta Metropolitan Municipality Mayor Setir BUSKUL** was arrested based on the decision of Zeralta 12th Criminal Court of Peace (decision number 2025/282, dated 23.03.2025) on charges of: \n\n> &#9675; Illegally Recording Personal Data \n\n> &#9675; Accepting Bribes \n\n> &#9675; Rigging Public Tenders \n\n> &#9675; Establishing an Organization for Criminal Activities \n\n> As a temporary measure, he has been removed from office by the Ministry of Interior in accordance with Article 108 of the Constitution and Article 35 of the Municipal Law No. 6121.\n\n- **Ičindes District Mayor Mellen ZEIDENEI** was arrested based on the decision of Zeralta 5th Criminal Court of Peace (decision number 2025/371, dated 23.03.2025) on charges of:\n\n> &#9675; Extortion\n\n> &#9675; Membership in a Criminal Organization\n\n>  He has been suspended as a temporary measure by the Ministry of Interior under Article 108 of the Constitution and Article 35 of the Municipal Law No. 6121.\n\n- **Garnalcezil District Mayor Šäve IABAKA** was arrested based on the decision of Zeralta 12th Criminal Court of Peace (decision number 2025/282, dated 23.03.2025) on charges of:\n\n> &#9675; Aiding an Armed Terrorist Organization\n\n> He has been suspended as a temporary measure by the Ministry of Interior under Article 108 of the Constitution and Article 35 of the Municipal Law No. 6121.\n\nIn accordance with Articles 33 and 34 of the Municipal Law No. 6121, **Garnalcezil District Governor Kabas Türreč** has been appointed as Acting Mayor of Garnalcezil Municipality by the Zeralta Governorship.\n\n***Context for Readers:***\n\nIf a mayor is removed from office, the municipal council typically elects a new mayor from within the same party. In this case, Zeralta Metropolitan Municipality (ZZS) and Ičindes Municipality are both controlled by the **Party for Freedom (PPN – Parti Pa Nör)**, the main opposition party. This means that the new mayors for these municipalities will likely be from **PPN**.\n\nHowever, in the case of **Garnalcezil Municipality**, the government has instead appointed a **trustee**, preventing the municipal council from electing a replacement mayor. This move is highly controversial, as it bypasses the democratic process and is often criticized as an attempt to take control of opposition-led municipalities.",
+                "end_summary": "This move has caused massive protests in nearly every single major city all around Natalicia, met with extreme violence from the police."
+            },
+            {
+                "id": "5",
+                "title": "Leaked PPN Group Chat Conversation Launches Investigation on Party",
+                "summary": "",
+                "thumbnail": "04.jpg",
+                "link": "article5.html",
+                "author": "Sul Niš",
+                "content": "On May 5, 2025, a leaked group chat involving senior members of Natalicia's **PPN (Parti Pa Nör)**, triggered widespread controversy and an official investigation into the party’s internal communications and potential criminal activity.\n\nThe leak, which emerged via an anonymous whistleblower, revealed explicit discussions allegedly involving plans for ethnically-targeted violence, racial segregation, and the undermining of democratic institutions. The content, now circulating widely on social media and reported by major news outlets, has led to swift backlash from civil society, human rights organizations, and government agencies.\n\nThe Party\n\nThe **Parti Pa Nör**, or “Party for Freedom,” is a fringe nationalist political party known for its extreme anti-immigration stance, opposition to multiculturalism, and calls for ethno-nationalist governance. While the party has denied accusations of extremism in public, it has frequently been criticized for hate speech, conspiracy rhetoric, and associations with militant groups.\n\nPPN has been gaining massive attention for its provocative rhetoric and online campaigns targeting immigrants and minority communities.\n\n# The Leak\n\nScreenshots and transcripts from the leaked group chat, reportedly from an encrypted messaging platform, contain inflammatory and violent language. Key highlights include:\n\n- Discussions suggesting covert plans to incite violence against immigrant populations.\n- References to “ethnic cleansing” framed as “restoring national purity.”\n- Open contempt for democratic processes, with suggestions of preparing for a “post-political phase.”\n- Derogatory racial slurs and open admiration of historical genocidal regimes.\n\nWhile the authenticity of the chat logs is still under verification, at least three individuals in the conversation have been identified as mid- to high-ranking PPN members, including the secretary general **Üšenk Durkus**.\n\n# Government and Public Response\n\nAuthorities have confirmed the launch of a formal investigation under national hate speech and terrorism-prevention laws. The Ministry of Justice, Gečetah Morana, in a press statement, said the content could constitute incitement to violence and the formation of a terrorist conspiracy.\n\nSeveral political parties have called for **PPN**’s immediate suspension or ban, citing the leaked content as proof of the party’s anti-constitutional objectives. Mass protests have begun forming in **Celicia**, the country's capital, followed shortly after by **Zeralta**, **Sindra** and other major cities, demanding accountability and a crackdown on far-right extremism.\n\n# PPN's Reaction\n\nPPN has issued a brief statement claiming the leak is “an orchestrated hoax designed to sabotage the nationalist cause” and has denied the legitimacy of the chat logs. The party’s leader, **Hidra Käzden**, insists that it is the victim of a “deep state conspiracy” and has vowed to “resist politically motivated suppression.”\n\nHowever, as public and legal pressure intensifies, some members have begun distancing themselves from the leader, and at least one regional coordinator has resigned.\n\n# Ongoing Developments\n\nAs of May 6, 2025, multiple homes linked to **PPN** members have been raided, and electronic devices seized. Prosecutors are considering charges ranging from hate speech to incitement to genocide.\n\nMore updates are expected as digital forensic analysis continues and parliamentary debates around party deregistration escalate.",
+                "end_summary": "This move has caused massive protests in nearly every single major city all around Natalicia, met with extreme violence from the police."
+            }
+        ]
+    }
+}
