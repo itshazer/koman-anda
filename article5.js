@@ -33,11 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(`./lang/${currentLanguage}.json`);
             const articleData = await response.json();
-            const article = articleData['b3'].articles.find(a => a.link === 'article5.html');
+
+            let article = null;
+            for (let key in articleData) {
+                if (articleData[key].articles) {
+                    article = articleData[key].articles.find(a => a.link === 'article5.html');
+                    if (article) break;
+                }
+            }
+
             if (article) {
-                document.getElementById('article-title').textContent = article.title;
+                document.getElementById('article-title').textContent = article.title || '';
                 document.getElementById('article-thumbnail').src = `./thumb/${article.thumbnail}`;
-                document.getElementById('article-summary').textContent = article.summary;
+                document.getElementById('article-summary').textContent = article.summary || '';
                 document.getElementById('article-author').textContent = `By: ${article.author || 'Unknown'}`;
                 document.getElementById('article-content').innerHTML = marked.parse(article.content || 'Details are currently unavailable.');
                 document.getElementById('article-end-summary').textContent = article.end_summary || '';
@@ -63,16 +71,3 @@ document.addEventListener('DOMContentLoaded', () => {
             loadArticleContent();
         }
     }
-
-    window.changeLanguage = changeLanguage;
-
-    loadLanguage(currentLanguage);
-
-    const languageSelector = document.querySelector('.language-selector select');
-    if (languageSelector) languageSelector.value = currentLanguage;
-
-    const isArticlePage = document.getElementById('article-title');
-    if (isArticlePage) {
-        loadArticleContent();
-    }
-});
